@@ -3,7 +3,7 @@
   "hero": {
     "eyebrow": "WEBSITE • CREATIVE • TRACKING • GROWTH",
     "title": "Turn Your Online Business Into a Measurable Growth System",
-    "text": "Website, product video advertising, GTM, GA4, Meta Pixel, Conversions API, Microsoft Clarity and retargeting — designed as one connected system.",
+    "text": "আপনার ব্যবসাকে ডিজিটাল দুনিয়ায় আরো বড় করতে ওয়েবসাইট, ভিডিও অ্যাড, এবং ডেটা ট্র্যাকিংয়ের সমন্বয়ে এমন এক ইকো-সিস্টেম তৈরি করুন— যা আপনার সেলস কয়েকগুণ বাড়িয়ে দেবে।",
     "heroImage": "assets/placeholder.svg",
     "primaryCta": "Book a Consultation",
     "secondaryCta": "View My Work"
@@ -23,33 +23,33 @@
   },
   "services": [
     [
-      "Website Design",
-      "Landing pages, business websites, product pages and conversion-focused interfaces.",
+      "Website Design & Development",
+      "একটি সুন্দর দোকান যেমন কাস্টমারকে আকর্ষণ করে, তেমনি একটি ফাস্ট এবং প্রফেশনাল ওয়েবসাইট কাস্টমারকে প্রোডাক্ট কিনতে বাধ্য করে। আমরা আপনার ব্যবসার জন্য এমন ওয়েবসাইট বানাই যা শুধু দেখতেই সুন্দর নয়, বরং কাস্টমারকে সেলসে কনভার্ট করতে সাহায্য করে।",
       "Website"
     ],
     [
       "Product Video Advertising",
-      "Hooks, product ads, short-form videos, motion graphics, captions, sound and CTA-focused editing.",
+      "টিভিতে যেমন আকর্ষণীয় বিজ্ঞাপন দেখে মানুষ প্রোডাক্ট কেনে, তেমনি ফেসবুক বা ইনস্টাগ্রামের জন্য আমরা এমন ভিডিও বানাই যা দেখে কাস্টমার প্রথম ৩ সেকেন্ডেই আপনার প্রোডাক্টের প্রেমে পড়ে যাবে এবং কিনতে আগ্রহী হবে।",
       "Creative"
     ],
     [
-      "Tracking & Analytics",
-      "GTM, GA4 events, User Exploration, Microsoft Clarity and conversion measurement.",
+      "Microsoft Clarity & Analytics",
+      "ধরুন আপনার একটি দোকান আছে। কাস্টমার দোকানে আসছে, ঘুরছে, কিন্তু কিছু না কিনেই চলে যাচ্ছে। মাইক্রোসফট ক্লারিটি হলো আপনার সেই দোকানের সিসি ক্যামেরার মতো! কাস্টমার আপনার ওয়েবসাইটে এসে কোথায় ক্লিক করছে বা কোথায় গিয়ে বিরক্ত হয়ে বের হয়ে যাচ্ছে—সব আপনি ভিডিওর মতো দেখতে পারবেন।",
       "Analytics"
     ],
     [
-      "Meta Tracking",
-      "Meta Pixel, Conversions API architecture, event parameters and deduplication planning.",
+      "GTM & Meta Tracking",
+      "দোকানে যেমন একজন ম্যানেজার হিসাব রাখে, GTM হলো আপনার ওয়েবসাইটের সেই ম্যানেজার। আর মেটা পিক্সেল? ধরুন কেউ আপনার শার্ট দেখলো কিন্তু কিনলো না। এরপর সে যেখানেই যাক, আপনার শার্টের বিজ্ঞাপন তার চোখের সামনে ভাসবে। এই জাদুটাই করে মেটা পিক্সেল!",
       "Meta"
     ],
     [
-      "Retargeting",
-      "Audience strategy for visitors, engagement, product views, CTA clicks and leads.",
+      "Smart Retargeting",
+      "যারা আপনার ওয়েবসাইটে এসেছিলো কিন্তু প্রোডাক্ট কেনেনি, তাদেরকে খুঁজে বের করে বারবার বিজ্ঞাপন দেখিয়ে ক্রেতায় পরিণত করার জাদুকরী উপায় হলো এই রিটার্গেটিং।",
       "Growth"
     ],
     [
-      "Monthly Support",
-      "Ongoing implementation, measurement, campaign analysis and one-to-one mentorship.",
+      "Monthly Growth Support",
+      "ওয়েবসাইট বানিয়ে ছেড়ে দিলেই হয় না, তার যত্ন নিতে হয়। প্রতি মাসে আপনার ব্যবসার ডেটা অ্যানালাইসিস করে নতুন মার্কেটিং প্ল্যান তৈরি করতে আমরা সবসময় আপনার পাশে থাকবো।",
       "Support"
     ]
   ],
@@ -57,9 +57,9 @@
     {
       "title": "Product Advertisement Demo",
       "type": "Video",
-      "media": "",
+      "media": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       "image": "assets/placeholder.svg",
-      "description": "Replace this demo with your own product advertisement.",
+      "description": "এটি একটি ডেমো ভিডিও। অ্যাডমিন প্যানেল থেকে আপনি যেকোনো ইউটিউব লিংক এখানে বসাতে পারবেন।",
       "tags": [
         "Hook",
         "Motion",
@@ -71,22 +71,10 @@
       "type": "Image",
       "media": "assets/placeholder.svg",
       "image": "assets/placeholder.svg",
-      "description": "Replace this placeholder with a real landing-page screenshot.",
+      "description": "আপনার বানানো সুন্দর সুন্দর ওয়েবসাইটের স্ক্রিনশটগুলো assets ফোল্ডারে রেখে এখানে যুক্ত করতে পারবেন।",
       "tags": [
         "UI",
         "Conversion"
-      ]
-    },
-    {
-      "title": "Analytics Dashboard Demo",
-      "type": "Image",
-      "media": "assets/placeholder.svg",
-      "image": "assets/placeholder.svg",
-      "description": "Use a fictional/demo dashboard screenshot here.",
-      "tags": [
-        "GA4",
-        "GTM",
-        "Analytics"
       ]
     }
   ],
@@ -123,49 +111,33 @@
   "packages": [
     [
       "Tracking Setup",
-      "GTM + GA4 + Meta Pixel + Clarity implementation and event planning."
+      "GTM + GA4 + Meta Pixel + Clarity যুক্ত করে কাস্টমার ট্র্যাক করার সম্পূর্ণ সিস্টেম তৈরি।"
     ],
     [
       "Website + Tracking",
-      "Conversion-focused website plus measurement setup."
+      "সেলস বাড়ানোর জন্য একটি প্রফেশনাল ওয়েবসাইট এবং সাথে অ্যাডভান্সড ট্র্যাকিং সেটআপ।"
     ],
     [
       "Creative + Advertising",
-      "Product video creative, hooks, CTA and advertising assets."
+      "ফেসবুক এবং ইনস্টাগ্রামের জন্য আকর্ষণীয় প্রোডাক্ট ভিডিও তৈরি এবং অ্যাড রান করার প্ল্যানিং।"
     ],
     [
       "Complete Digital Setup",
-      "Website + creative + tracking + analytics + retargeting architecture."
-    ],
-    [
-      "Monthly Support",
-      "Ongoing measurement, implementation and marketing support."
-    ],
-    [
-      "One-to-One Mentorship",
-      "Practical consultation and implementation guidance."
+      "ওয়েবসাইট + ভিডিও + ট্র্যাকিং + মার্কেটিং — আপনার অনলাইন ব্যবসার এ টু জেড সলিউশন।"
     ]
   ],
   "faq": [
     [
-      "Can you set up tracking on my existing website?",
-      "Yes. The exact setup depends on the website platform, available access and the events you need to measure."
+      "আপনারা কি আমার বর্তমান ওয়েবসাইটে ট্র্যাকিং সেটআপ করে দিতে পারবেন?",
+      "হ্যাঁ, অবশ্যই। আপনার ওয়েবসাইট যে প্ল্যাটফর্মেই (WordPress, Shopify ইত্যাদি) থাকুক না কেন, আমরা গুগল ট্যাগ ম্যানেজার এবং পিক্সেল সেটআপ করে দিতে পারবো।"
     ],
     [
-      "Can you implement Meta Pixel and CAPI?",
-      "Yes. Pixel and server-side CAPI can be planned together, including event parameters and deduplication."
+      "ভিডিও অ্যাডভার্টাইজিং কীভাবে আমার সেলস বাড়াবে?",
+      "মানুষ এখন পড়ার চেয়ে ভিডিও দেখতে বেশি পছন্দ করে। একটি চমৎকার ভিডিও কাস্টমারকে খুব দ্রুত প্রোডাক্টের প্রতি আকৃষ্ট করে, যা সাধারণ ছবির চেয়ে কয়েকগুণ বেশি সেলস এনে দেয়।"
     ],
     [
-      "Can you create product advertising videos?",
-      "Yes. Product ads can include hooks, demonstrations, motion graphics, captions, sound design and CTA structure."
-    ],
-    [
-      "Can you provide monthly support?",
-      "Yes. Monthly support can cover implementation, analytics reviews, creative and campaign measurement."
-    ],
-    [
-      "Can you guarantee sales or ROAS?",
-      "No. Results depend on the product, offer, market, creative, landing page, budget and many other factors."
+      "আপনারা কি প্রতি মাসে আমার ব্যবসার মার্কেটিং ম্যানেজ করতে পারবেন?",
+      "হ্যাঁ, আমরা মাসিক চুক্তিতে আপনার ওয়েবসাইটের ডেটা অ্যানালাইসিস, বিজ্ঞাপন তৈরি এবং সেলস বাড়ানোর জন্য স্ট্র্যাটেজি নিয়ে কাজ করবো।"
     ]
   ]
 }
