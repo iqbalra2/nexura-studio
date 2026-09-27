@@ -1,4 +1,4 @@
-const PASSWORD_HASH = "1f45c06afa9727d7a5f8950b6f59c220126ddb383e1d2e0cd27ee1627cb875b6"; // placeholder hash; change with the instructions in README
+const PASSWORD_HASH = "61ebc0c467ee2f9ffa496ca5a6b731ac2a355f91ce233c094eb2933861eb152e"; // password: 8866
 let DATA = null, tokenMemory = "";
 const $ = id => document.getElementById(id);
 
