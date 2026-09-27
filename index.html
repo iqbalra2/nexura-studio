@@ -25,6 +25,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="app"></div>
 
+<!-- নতুন অর্ডার সেকশন শুরু -->
+<section id="order-section" style="padding: 40px 20px; background-color: #f9f9f9; max-width: 600px; margin: 40px auto; border-radius: 10px; color: #333; font-family: sans-serif;">
+  <h2 style="text-align: center; margin-bottom: 20px; color: #111;">অর্ডার ফরম</h2>
+  <form id="orderForm">
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; font-weight: bold; margin-bottom: 5px;">আপনার নাম *</label>
+      <input type="text" id="custName" required placeholder="পুরো নাম লিখুন" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+    </div>
+    
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; font-weight: bold; margin-bottom: 5px;">মোবাইল নম্বর *</label>
+      <input type="tel" id="custPhone" required placeholder="১১ ডিজিটের মোবাইল নম্বর" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; font-weight: bold; margin-bottom: 5px;">সম্পূর্ণ ঠিকানা *</label>
+      <textarea id="custAddress" required placeholder="জেলা, থানা ও বিস্তারিত ঠিকানা" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;" rows="3"></textarea>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; font-weight: bold; margin-bottom: 5px;">পেমেন্ট মেথড *</label>
+      <select id="paymentMethod" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+        <option value="ক্যাশ অন ডেলিভারি">ক্যাশ অন ডেলিভারি (Cash on Delivery)</option>
+        <option value="বিকাশ">বিকাশ (bKash)</option>
+        <option value="নগদ">নগদ (Nagad)</option>
+      </select>
+    </div>
+
+    <button type="submit" style="width: 100%; padding: 12px; background-color: #28a745; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer;">
+      অর্ডার কনফার্ম করুন
+    </button>
+  </form>
+</section>
+<!-- নতুন অর্ডার সেকশন শেষ -->
+
 <script src="app.js"></script>
 </body>
 </html>
