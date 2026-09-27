@@ -41,6 +41,7 @@ async function loadContent() {
   } catch (e) { console.warn('content.json could not load', e); }
   render();
   installGTM();
+  setupOrderForm(); // নতুন যুক্ত করা হয়েছে
 }
 
 function esc(x) {
@@ -83,7 +84,7 @@ function render() {
     <div class="hero-copy">
       <h1>${esc(h.titleLine1)}<br>${esc(h.titleLine2)}<br><span class="accent">${esc(h.titleLine3)}</span></h1>
       <p class="desc">${esc(h.text)}</p>
-      <a href="#" class="btn primary">${esc(h.primaryCta)} →</a>
+      <a href="#order-section" class="btn primary order-btn">${esc(h.primaryCta)} →</a>
       <div class="hero-badges">
         ${badges.map(b => `<div class="badge-item"><span class="ic">${esc(b.icon)}</span><div><b>${esc(b.title)}</b><small>${esc(b.sub)}</small></div></div>`).join('')}
       </div>
@@ -100,7 +101,7 @@ function render() {
       <div class="farm-eyebrow">${esc(fb.eyebrow)}</div>
       <h2>${esc(fb.titleNormal)} <span class="accent">${esc(fb.titleAccent)}</span></h2>
       <p>${esc(fb.text)}</p>
-      <a href="#" class="btn primary">${esc(fb.cta)} →</a>
+      <a href="#order-section" class="btn primary order-btn">${esc(fb.cta)} →</a>
     </div>
     <div class="farm-stats">
       ${(fb.stats || []).map(s => `<div class="stat"><b>${esc(s.number)}</b><small>${esc(s.label)}</small></div>`).join('')}
@@ -121,7 +122,7 @@ function render() {
         <div class="eyebrow">${esc(of.eyebrow)}</div>
         <h2>${esc(of.title)}</h2>
         <p>${esc(of.subtitle)}</p>
-        <a href="#" class="btn gold">${esc(of.cta)}</a>
+        <a href="#order-section" class="btn gold order-btn">${esc(of.cta)}</a>
       </div>
       <div class="offer-badge"><span>${esc(of.badgeLine1)}</span><span>${esc(of.badgeLine2)}</span></div>
     </div>
@@ -143,8 +144,8 @@ function render() {
           <span class="heart">♡</span>
           <div class="pick-img"><img src="${esc(p.image)}" alt="${esc(p.name)}"></div>
           <b class="name">${esc(p.name)}</b>
-          <span class="price"><strong>${esc(p.price)}</strong> ${esc(p.unit)}</span>
-          <button class="btn addcart">${esc(C.addToCart)}</button>
+          <span class="price"><strong>${esc(p.price)}</strong>${esc(p.unit)}</span>
+          <button class="btn addcart order-btn" onclick="document.getElementById('order-section').scrollIntoView({behavior: 'smooth'})">${esc(C.addToCart)}</button>
         </div>`).join('')}
     </div>
   </div></section>
@@ -195,6 +196,42 @@ function installGTM() {
   const ns = document.createElement('noscript');
   ns.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=${encodeURIComponent(id)}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
   document.body.prepend(ns);
+}
+
+// নতুন যুক্ত করা ফাংশন - অর্ডার ফর্ম সাবমিট এবং স্ক্রল লজিক
+function setupOrderForm() {
+  const orderForm = document.getElementById('orderForm');
+  if (orderForm) {
+    orderForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const address = document.getElementById('custAddress').value;
+      const paymentMethod = document.getElementById('paymentMethod').value;
+      
+      // হোয়াটসঅ্যাপ মেসেজ ফরম্যাট তৈরি
+      const message = `নতুন অর্ডার এসেছে!\n\nনাম: ${name}\nমোবাইল: ${phone}\nঠিকানা: ${address}\nপেমেন্ট মেথড: ${paymentMethod}`;
+      
+      // content.json থেকে হোয়াটসঅ্যাপ নম্বর নেওয়া (যদি না থাকে তাহলে ডিফল্ট)
+      let waNumber = C.contact?.whatsapp || "8801000000000";
+      
+      // হোয়াটসঅ্যাপের লিংক তৈরি করে ওপেন করা
+      const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+      window.open(waLink, '_blank');
+    });
+  }
+
+  // সব 'অর্ডার' বা 'কার্টে যোগ করুন' বাটনে ক্লিক করলে যেন স্ক্রল করে ফর্মে নিয়ে যায়
+  document.querySelectorAll('.order-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const orderSection = document.getElementById('order-section');
+      if (orderSection) {
+        orderSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 }
 
 loadContent();
