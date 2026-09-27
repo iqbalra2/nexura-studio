@@ -1,31 +1,245 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="bn">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P5M5BRLG');</script>
-  <!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexura Studio — Admin</title>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Nexura Studio — website, video advertising, analytics, tracking and digital growth systems for online businesses.">
-  <meta property="og:title" content="Nexura Studio — Digital Business Growth Systems">
-  <meta property="og:description" content="Website, video ads, GTM, GA4, Meta Pixel, CAPI, Microsoft Clarity and retargeting.">
-  <meta property="og:type" content="website">
-  <title>Nexura Studio — Digital Business Growth Systems</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5M5BRLG');</script>
+<!-- End Google Tag Manager -->
+
+<style>
+:root{--bg:#0b2013;--panel:#0f2a18;--panel2:#12331d;--line:#1e3d26;--text:#eef6ec;--muted:#9db69f;--lime:#8bc53f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:30px 18px 80px}
+h1{font-size:20px;margin:0 0 20px}
+.hidden{display:none !important}
+#login{max-width:320px;margin:80px auto;background:var(--panel);border:1px solid var(--line);padding:26px;border-radius:16px}
+#login input{width:100%;padding:11px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);margin-bottom:12px}
+#login button, .btn{background:var(--lime);color:#0b2013;border:0;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer}
+.btn.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+.btn.danger{background:#c0503f;color:#fff}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+nav button{background:var(--panel2);border:1px solid var(--line);color:var(--muted);padding:9px 14px;border-radius:999px;font-size:13px;cursor:pointer}
+nav button.active{background:var(--lime);color:#0b2013;border-color:var(--lime)}
+.tab{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px}
+.tab h3{margin-top:0;font-size:15px;color:var(--lime)}
+label{display:block;font-size:12.5px;color:var(--muted);margin:14px 0 5px}
+input[type=text],input[type=email],input[type=url],textarea{
+  width:100%;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-family:inherit;font-size:13.5px
+}
+textarea{resize:vertical;min-height:70px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.repeat-item{border:1px dashed var(--line);border-radius:10px;padding:14px;margin-bottom:12px;position:relative}
+.repeat-item .rm{position:absolute;top:8px;right:8px;background:#c0503f;color:#fff;border:0;width:22px;height:22px;border-radius:6px;cursor:pointer;font-size:12px}
+.actions-bar{position:sticky;bottom:0;background:var(--bg);padding:14px 0;border-top:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+small.hint{color:var(--muted);display:block;margin-top:4px}
+#publishStatus{margin-top:10px;font-size:13px;color:var(--lime)}
+</style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5M5BRLG"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5M5BRLG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-  <noscript><div class="noscript">JavaScript is required for this interactive portfolio.</div></noscript>
-  <div id="app"></div>
+<div class="wrap">
+  <h1>🌿 Nexura Studio — কন্টেন্ট এডিটর</h1>
+
+  <div id="login">
+    <label>পাসওয়ার্ড</label>
+    <input type="text" id="password" placeholder="পাসওয়ার্ড দিন">
+    <button id="loginBtn" class="btn">লগইন</button>
+    <small class="hint">ডিফল্ট পাসওয়ার্ড বদলাতে admin.js ফাইলে PASSWORD_HASH বদলান।</small>
+  </div>
+
+  <div id="panel" class="hidden">
+    <nav>
+      <button data-tab="brandTab" class="active">ব্র্যান্ড ও টপবার</button>
+      <button data-tab="heroTab">হিরো সেকশন</button>
+      <button data-tab="farmTab">ফার্ম ব্যানার</button>
+      <button data-tab="catTab">ক্যাটাগরি</button>
+      <button data-tab="offerTab">অফার</button>
+      <button data-tab="whyTab">Why Choose Us</button>
+      <button data-tab="picksTab">টপ পিকস</button>
+      <button data-tab="newsletterTab">নিউজলেটার</button>
+      <button data-tab="footerTab">ফুটার</button>
+      <button data-tab="contactTab">যোগাযোগ</button>
+      <button data-tab="trackingTab">ট্র্যাকিং</button>
+      <button data-tab="githubTab">GitHub পাবলিশ</button>
+    </nav>
+
+    <div id="brandTab" class="tab">
+      <h3>ব্র্যান্ড</h3>
+      <label>ব্র্যান্ডের নাম</label><input type="text" id="brand">
+      <label>ট্যাগলাইন (লোগোর নিচে)</label><input type="text" id="brandTag">
+      <label>ডেমো রিবন টেক্সট (কোণায় দেখা যাবে)</label><input type="text" id="demoRibbon">
+      <label>টপবার — একটি লাইনে একটি বার্তা</label><textarea id="topbar"></textarea>
+      <label>নেভিগেশন মেনু — একটি লাইনে একটি আইটেম</label><textarea id="nav"></textarea>
+    </div>
+
+    <div id="heroTab" class="tab hidden">
+      <h3>হিরো সেকশন</h3>
+      <div class="row3">
+        <div><label>হেডলাইন লাইন ১</label><input type="text" id="hTitle1"></div>
+        <div><label>হেডলাইন লাইন ২</label><input type="text" id="hTitle2"></div>
+        <div><label>হেডলাইন লাইন ৩ (রঙিন)</label><input type="text" id="hTitle3"></div>
+      </div>
+      <label>সাব-টেক্সট</label><textarea id="hText"></textarea>
+      <div class="row">
+        <div><label>প্রাইমারি বাটনের লেখা</label><input type="text" id="hCta"></div>
+        <div><label>হিরো ছবির লিংক</label><input type="text" id="hImage"></div>
+      </div>
+      <div class="row">
+        <div><label>গোল ব্যাজ — লাইন ১</label><input type="text" id="hBadge1"></div>
+        <div><label>গোল ব্যাজ — লাইন ২</label><input type="text" id="hBadge2"></div>
+      </div>
+      <label>ট্রাস্ট ব্যাজ (আইকন, টাইটেল, সাব-টেক্সট)</label>
+      <div id="trustBadges"></div>
+      <button class="btn secondary" id="addTrust">+ ব্যাজ যোগ করুন</button>
+    </div>
+
+    <div id="farmTab" class="tab hidden">
+      <h3>ফার্ম ব্যানার (ছবি + স্ট্যাট সেকশন)</h3>
+      <label>ছোট আইব্রো টেক্সট</label><input type="text" id="fbEyebrow">
+      <div class="row">
+        <div><label>হেডিং (স্বাভাবিক অংশ)</label><input type="text" id="fbTitleN"></div>
+        <div><label>হেডিং (রঙিন অংশ)</label><input type="text" id="fbTitleA"></div>
+      </div>
+      <label>বর্ণনা</label><textarea id="fbText"></textarea>
+      <div class="row">
+        <div><label>বাটনের লেখা</label><input type="text" id="fbCta"></div>
+        <div><label>ছবির লিংক</label><input type="text" id="fbImage"></div>
+      </div>
+      <label>স্ট্যাটস (সংখ্যা + লেবেল)</label>
+      <div id="fbStats"></div>
+      <button class="btn secondary" id="addStat">+ স্ট্যাট যোগ করুন</button>
+    </div>
+
+    <div id="catTab" class="tab hidden">
+      <h3>ক্যাটাগরি গ্রিড</h3>
+      <label>সেকশন হেডিং</label><input type="text" id="catHeading">
+      <label>ক্যাটাগরি কার্ড (নাম, আইটেম সংখ্যা, ছবি)</label>
+      <div id="categories"></div>
+      <button class="btn secondary" id="addCat">+ ক্যাটাগরি যোগ করুন</button>
+    </div>
+
+    <div id="offerTab" class="tab hidden">
+      <h3>অফার ব্যানার</h3>
+      <div class="row">
+        <div><label>আইব্রো টেক্সট</label><input type="text" id="ofEyebrow"></div>
+        <div><label>বড় হেডিং</label><input type="text" id="ofTitle"></div>
+      </div>
+      <div class="row">
+        <div><label>সাব-টাইটেল</label><input type="text" id="ofSubtitle"></div>
+        <div><label>বাটনের লেখা</label><input type="text" id="ofCta"></div>
+      </div>
+      <div class="row">
+        <div><label>গোল ব্যাজ লাইন ১</label><input type="text" id="ofBadge1"></div>
+        <div><label>গোল ব্যাজ লাইন ২</label><input type="text" id="ofBadge2"></div>
+      </div>
+      <label>ব্যাকগ্রাউন্ড ছবির লিংক</label><input type="text" id="ofImage">
+    </div>
+
+    <div id="whyTab" class="tab hidden">
+      <h3>Why Choose Us</h3>
+      <label>সেকশন হেডিং</label><input type="text" id="whyHeading">
+      <label>আইটেম (আইকন, টাইটেল, সাব-টেক্সট)</label>
+      <div id="whyItems"></div>
+      <button class="btn secondary" id="addWhy">+ আইটেম যোগ করুন</button>
+    </div>
+
+    <div id="picksTab" class="tab hidden">
+      <h3>টপ পিকস / প্রোডাক্ট</h3>
+      <label>সেকশন হেডিং</label><input type="text" id="picksHeading">
+      <label>ছোট নোট (ঐচ্ছিক)</label><input type="text" id="picksNote">
+      <label>"কার্টে যোগ করুন" বাটনের লেখা</label><input type="text" id="addToCartText">
+      <label>প্রোডাক্ট (নাম, দাম, একক, ছবি)</label>
+      <div id="picks"></div>
+      <button class="btn secondary" id="addPick">+ প্রোডাক্ট যোগ করুন</button>
+    </div>
+
+    <div id="newsletterTab" class="tab hidden">
+      <h3>নিউজলেটার</h3>
+      <label>টাইটেল</label><input type="text" id="nlTitle">
+      <label>টেক্সট</label><input type="text" id="nlText">
+      <div class="row">
+        <div><label>ইনপুট প্লেসহোল্ডার</label><input type="text" id="nlPlaceholder"></div>
+        <div><label>বাটনের লেখা</label><input type="text" id="nlButton"></div>
+      </div>
+    </div>
+
+    <div id="footerTab" class="tab hidden">
+      <h3>ফুটার</h3>
+      <label>ব্র্যান্ড বর্ণনা</label><textarea id="ftAbout"></textarea>
+      <div class="row">
+        <div><label>কুইক লিংক হেডিং</label><input type="text" id="ftQuickHeading"><label>আইটেম (এক লাইনে একটি)</label><textarea id="ftQuickLinks"></textarea></div>
+        <div><label>কাস্টমার সার্ভিস হেডিং</label><input type="text" id="ftServiceHeading"><label>আইটেম (এক লাইনে একটি)</label><textarea id="ftCustomerService"></textarea></div>
+      </div>
+      <div class="row">
+        <div><label>তথ্য হেডিং</label><input type="text" id="ftInfoHeading"><label>আইটেম (এক লাইনে একটি)</label><textarea id="ftInformation"></textarea></div>
+        <div><label>পেমেন্ট হেডিং</label><input type="text" id="ftPaymentHeading"></div>
+      </div>
+      <label>নিচের নোট (ডেমো ব্যাখ্যা)</label><textarea id="ftBottomNote"></textarea>
+    </div>
+
+    <div id="contactTab" class="tab hidden">
+      <h3>যোগাযোগের তথ্য</h3>
+      <div class="row">
+        <div><label>WhatsApp নম্বর (দেশের কোডসহ, শুধু সংখ্যা)</label><input type="text" id="whatsapp"></div>
+        <div><label>ফোন নম্বর</label><input type="text" id="phone"></div>
+      </div>
+      <div class="row">
+        <div><label>Messenger লিংক</label><input type="text" id="messenger"></div>
+        <div><label>Google Meet লিংক</label><input type="text" id="meeting"></div>
+      </div>
+      <label>ইমেইল</label><input type="email" id="email">
+    </div>
+
+    <div id="trackingTab" class="tab hidden">
+      <h3>ট্র্যাকিং সেটআপ</h3>
+      <small class="hint">index.html এবং admin.html-এ GTM কোড (GTM-P5M5BRLG) সরাসরি বসানো আছে — এটি এখানে খালি রাখলেও কাজ করবে। এখানে আইডি দিলে অতিরিক্তভাবে content.json থেকেও লোড হবে।</small>
+      <div class="row">
+        <div><label>GTM ID</label><input type="text" id="gtmId" placeholder="GTM-XXXXXXX"></div>
+        <div><label>GA4 Measurement ID</label><input type="text" id="ga4Id" placeholder="G-XXXXXXX"></div>
+      </div>
+      <div class="row">
+        <div><label>Meta Pixel ID</label><input type="text" id="metaId"></div>
+        <div><label>Microsoft Clarity Project ID</label><input type="text" id="clarityId"></div>
+      </div>
+    </div>
+
+    <div id="githubTab" class="tab hidden">
+      <h3>GitHub-এ সরাসরি পাবলিশ করুন (ঐচ্ছিক)</h3>
+      <small class="hint">প্রতিবার ব্যবহারের জন্য একটি fine-grained GitHub টোকেন লাগবে। টোকেন কোথাও সংরক্ষণ করা হয় না।</small>
+      <div class="row">
+        <div><label>Owner (ইউজারনেম)</label><input type="text" id="ghOwner" value="iqbalra2"></div>
+        <div><label>Repository</label><input type="text" id="ghRepo" value="nexura-studio"></div>
+      </div>
+      <div class="row">
+        <div><label>Branch</label><input type="text" id="ghBranch" value="main"></div>
+        <div><label>ফাইল পাথ</label><input type="text" id="ghPath" value="content.json"></div>
+      </div>
+      <label>GitHub Token</label><input type="text" id="ghToken" placeholder="ghp_xxx বা fine-grained token">
+      <button class="btn" id="publishNow" style="margin-top:14px">এখনই পাবলিশ করুন</button>
+      <div id="publishStatus"></div>
+    </div>
+
+    <div class="actions-bar">
+      <button class="btn" id="download">content.json ডাউনলোড করুন</button>
+      <button class="btn secondary" id="saveLocal">শুধু এই ব্রাউজারে সেভ করুন</button>
+      <a class="btn secondary" href="index.html" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center">ওয়েবসাইট দেখুন ↗</a>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
 </body>
 </html>
