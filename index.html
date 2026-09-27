@@ -3,61 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexura Studio — ডেমো টেমপ্লেট শোকেস</title>
-<meta name="description" content="Nexura Studio-এর ডিজাইন করা একটি সম্পূর্ণ কাস্টমাইজযোগ্য ডেমো ওয়েবসাইট টেমপ্লেট।">
+
+<title>Nexura Studio — Premium Organic Food</title>
+<meta name="description" content="Nexura Studio-এর premium organic food experience.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="styles.css">
 
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P5M5BRLG');</script>
+<script>
+(function(w,d,s,l,i){
+w[l]=w[l]||[];
+w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),
+dl=l!='dataLayer'?'&l='+l:'';
+j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5M5BRLG');
+</script>
 <!-- End Google Tag Manager -->
 </head>
+
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5M5BRLG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<noscript><div class="noscript">এই ইন্টারেক্টিভ ওয়েবসাইটটি দেখতে জাভাস্ক্রিপ্ট প্রয়োজন।</div></noscript>
+<noscript>
+<div class="noscript">
+এই ইন্টারেক্টিভ ওয়েবসাইটটি দেখতে JavaScript প্রয়োজন।
+</div>
+</noscript>
 
+<!-- Main application -->
 <div id="app"></div>
 
-<!-- নতুন অর্ডার সেকশন শুরু -->
-<section id="order-section">
-  <h2>অর্ডার ফরম</h2>
-  <form id="orderForm">
+<!-- =====================================================
+     PREMIUM CART DRAWER
+===================================================== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+
+  <div class="cart-header">
     <div>
-      <label>আপনার নাম *</label>
-      <input type="text" id="custName" required placeholder="পুরো নাম লিখুন">
-    </div>
-    
-    <div>
-      <label>মোবাইল নম্বর *</label>
-      <input type="tel" id="custPhone" required placeholder="১১ ডিজিটের মোবাইল নম্বর">
+      <span class="cart-eyebrow">YOUR BAG</span>
+      <h2>আপনার কার্ট</h2>
     </div>
 
-    <div>
-      <label>সম্পূর্ণ ঠিকানা *</label>
-      <textarea id="custAddress" required placeholder="জেলা, থানা ও বিস্তারিত ঠিকানা" rows="3"></textarea>
+    <button class="cart-close" id="cartClose" aria-label="কার্ট বন্ধ করুন">
+      ×
+    </button>
+  </div>
+
+  <div class="cart-items" id="cartItems">
+    <!-- JavaScript inserts cart items -->
+  </div>
+
+  <div class="cart-empty" id="cartEmpty">
+    <div class="empty-icon">🛒</div>
+    <h3>আপনার কার্ট খালি</h3>
+    <p>পছন্দের পণ্য কার্টে যোগ করুন।</p>
+  </div>
+
+  <div class="cart-footer">
+
+    <div class="cart-summary-row">
+      <span>Subtotal</span>
+      <strong id="cartSubtotal">৳0</strong>
     </div>
 
-    <div>
-      <label>পেমেন্ট মেথড *</label>
-      <select id="paymentMethod">
-        <option value="ক্যাশ অন ডেলিভারি">ক্যাশ অন ডেলিভারি (Cash on Delivery)</option>
-        <option value="বিকাশ">বিকাশ (bKash)</option>
-        <option value="ন নগদ">নগদ (Nagad)</option>
-      </select>
+    <div class="cart-summary-row delivery-row">
+      <span>Delivery</span>
+      <strong id="cartDelivery">৳0</strong>
     </div>
 
-    <button type="submit">অর্ডার কনফার্ম করুন</button>
-  </form>
-</section>
-<!-- নতুন অর্ডার সেকশন শেষ -->
+    <div class="cart-total">
+      <span>Total</span>
+      <strong id="cartTotal">৳0</strong>
+    </div>
+
+    <button class="btn primary checkout-btn" id="checkoutBtn">
+      Checkout →
+    </button>
+
+  </div>
+
+</aside>
+
+
+<!-- =====================================================
+     ORDER MODAL
+===================================================== -->
+<div class="order-modal" id="orderModal">
+
+  <div class="order-modal-card">
+
+    <button class="modal-close" id="modalClose">×</button>
+
+    <div class="modal-heading">
+      <span>SECURE CHECKOUT</span>
+      <h2>অর্ডার সম্পন্ন করুন</h2>
+      <p>তথ্যগুলো পূরণ করুন। এরপর WhatsApp-এ অর্ডার পাঠানো হবে।</p>
+    </div>
+
+    <form id="orderForm" novalidate>
+
+      <div class="form-field">
+        <label for="custName">আপনার নাম *</label>
+
+        <input
+          type="text"
+          id="custName"
+          placeholder="পুরো নাম লিখুন"
+          autocomplete="name"
+        >
+
+        <small class="field-error"></small>
+      </div>
+
+      <div class="form-field">
+        <label for="custPhone">মোবাইল নম্বর *</label>
+
+        <input
+          type="tel"
+          id="custPhone"
+          placeholder="01XXXXXXXXX"
+          inputmode="numeric"
+          autocomplete="tel"
+        >
+
+        <small class="field-error"></small>
+      </div>
+
+      <div class="form-field">
+        <label for="custAddress">সম্পূর্ণ ঠিকানা *</label>
+
+        <textarea
+          id="custAddress"
+          rows="3"
+          placeholder="জেলা, থানা ও বিস্তারিত ঠিকানা"
+          autocomplete="street-address"
+        ></textarea>
+
+        <small class="field-error"></small>
+      </div>
+
+      <div class="form-field">
+        <label for="paymentMethod">পেমেন্ট মেথড *</label>
+
+        <select id="paymentMethod">
+          <option value="ক্যাশ অন ডেলিভারি">
+            ক্যাশ অন ডেলিভারি
+          </option>
+
+          <option value="বিকাশ">
+            বিকাশ
+          </option>
+
+          <option value="নগদ">
+            নগদ
+          </option>
+        </select>
+
+        <small class="field-error"></small>
+      </div>
+
+      <div class="checkout-preview">
+
+        <div>
+          <span>Items</span>
+          <strong id="checkoutItems">0</strong>
+        </div>
+
+        <div>
+          <span>Delivery</span>
+          <strong id="checkoutDelivery">৳0</strong>
+        </div>
+
+        <div class="preview-total">
+          <span>Total</span>
+          <strong id="checkoutTotal">৳0</strong>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn primary submit-order">
+        WhatsApp-এ অর্ডার পাঠান →
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     PREMIUM TOAST
+===================================================== -->
+<div class="premium-toast" id="premiumToast">
+
+  <div class="toast-check">
+    ✓
+  </div>
+
+  <div>
+    <strong>অর্ডার প্রস্তুত!</strong>
+    <span>WhatsApp-এ পাঠানো হচ্ছে...</span>
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     MOBILE STICKY CTA
+===================================================== -->
+<div class="mobile-order-bar">
+
+  <div>
+    <small>আপনার কার্ট</small>
+    <strong id="mobileCartTotal">৳0</strong>
+  </div>
+
+  <button class="btn primary" id="mobileOrderBtn">
+    Order Now →
+  </button>
+
+</div>
+
 
 <script src="app.js"></script>
+
 </body>
 </html>
